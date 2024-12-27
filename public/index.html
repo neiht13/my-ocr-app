@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Chuyển đổi PDF sang DOCX</title>
+    <!-- Google Fonts (Bạn có thể tuỳ chọn font khác) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Container bao toàn bộ nội dung -->
+    <div class="main-container">
+        <!-- Tiêu đề website -->
+        <h1 class="site-title">Chuyển đổi PDF sang DOCX</h1>
+
+        <!-- Khu vực Upload PDF -->
+        <div class="upload-card">
+            <!-- Thẻ hiển thị PDF xem trước -->
+            <div class="pdf-preview-container">
+                <iframe id="pdf-preview" class="pdf-preview" src="" frameborder="0"></iframe>
+                <div class="pdf-preview-placeholder" id="pdf-preview-placeholder">
+                    <p>Kéo thả hoặc nhấp để chọn file PDF</p>
+                    <span class="upload-icon">📂</span>
+                </div>
+                <input
+                  type="file"
+                  name="pdfFile"
+                  id="pdfFile"
+                  class="pdf-input"
+                  accept=".pdf"
+                />
+            </div>
+
+            <!-- Khu vực hiển thị trạng thái tiến trình -->
+            <div class="progress-area" style="display: none;">
+                <progress id="progress-bar" max="100" value="0"></progress>
+                <span id="progress-text">0%</span>
+            </div>
+
+            <!-- Link tải xuống file DOCX -->
+            <a
+              id="download-link"
+              class="download-link"
+              style="display: none;"
+            >
+              Tải xuống file DOCX
+            </a>
+
+            <!-- Thông báo lỗi -->
+            <div
+              id="error-message"
+              class="error-message"
+              style="display: none;"
+            ></div>
+        </div>
+    </div>
+
+    <!-- Script JS -->
+    <script src="script.js"></script>
+</body>
+</html>
